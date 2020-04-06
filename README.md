@@ -29,11 +29,9 @@ Here's an overview of the high-level topics we'll be covering this week, in orde
 
 1. Django URLs, Views, and Templates
 2. Data Models and Migrations
-3. Django Class-based Views
-4. One-to-Many Models & ModelForms
-5. Many-to-Many Models
-6. Uploading Images to the Cloud
-7. Django Authentication
+3. One-to-Many Models & ModelForms
+4. Many-to-Many Models
+5. Django Authentication
 
 Let's get on with part 1...
 
