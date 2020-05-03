@@ -29,11 +29,9 @@ Here's an overview of the high-level topics we'll be covering this week, in orde
 
 1. Django URLs, Views, and Templates
 2. Data Models and Migrations
-3. Django Class-based Views
-4. One-to-Many Models & ModelForms
-5. Many-to-Many Models
-6. Uploading Images to the Cloud
-7. Django Authentication
+3. One-to-Many Models & ModelForms
+4. Many-to-Many Models
+5. Django Authentication
 
 Let's get on with part 1...
 
@@ -77,14 +75,18 @@ Once again, let's review this diagram that shows how a request flows through a D
 
 ## We Do: Start the **CatCollector** Project
 
-Let's start by making a directory for our project:
+Let's start by installing Django to our machine and running the `startproject` command:
 
 ```
-$ mkdir cat_app
-$ cd cat_app
+$ pip3 install Django
+$ django-admin startproject catcollector
 ```
 
-Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and multiple versions of Python on the same system so we can have different versions of both Python and the packages we are using on our computers.
+The above command generates and configures a Django project in a folder named **catcollector**.
+
+Change into the **catcollector** folder just created and open the folder in your text editor.
+
+Let's also build a virtual environment. Virtual environments allow us to install `pip` packages in the project we're working on instead of globally on our machine. This is an important step in order to keep your installation organized and easy to deploy.
 
 ```
 $ pip3 install virtualenv
@@ -92,10 +94,9 @@ $ virtualenv .env -p python3
 $ source .env/bin/activate
 ```
 
-Let's also install some dependencies and save them. Django doesn't utilize a `Gemfile` or a `package.json`. Instead, we just use a text file that lists all of our dependencies. The `pip freeze` command saves the dependencies in our virtualenv to that file.
+Let's also install some dependencies and save them. Django doesn't utilize a `Gemfile` or a `package.json`. Instead, we just use a text file that lists all of our dependencies; in our case, that file is called `requirements.txt`. The `pip freeze` command saves the dependencies in our virtualenv to that file.
 
 ```
-$ pip3 install Django
 $ pip3 install psycopg2
 $ pip3 freeze > requirements.txt
 ```
@@ -117,18 +118,6 @@ Let's use a command installed with PostgreSQL to create the database for the Cat
 ```
 $ createdb catcollector
 ```
-
-#### Start the Project
-
-There is no starter-code for this lesson. Move into this lesson's folder and run the following command to create the Django project:
-
-```
-$ django-admin startproject catcollector
-```
-
-The above command generates and configures a Django project in a folder named **catcollector**.
-
-Change into the **catcollector** folder just created and open the folder in your text editor.
 
 #### Create the App
 
@@ -742,6 +731,6 @@ Because your completed Finch Collector app will be fairly comprehensive and be a
 
 ## References
 
-[Django Template Docs](https://docs.djangoproject.com/en/2.1/ref/templates/)
+[Django Template Docs](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/)
 
-[Django Static Files](https://docs.djangoproject.com/en/2.1/howto/static-files/)
+[Django Static Files](https://docs.djangoproject.com/en/3.0/howto/static-files/)
