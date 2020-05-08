@@ -78,9 +78,11 @@ Once again, let's review this diagram that shows how a request flows through a D
 Let's start by making a directory for our project:
 
 ```bash
-$ mkdir django-starter
-$ cd django-starter
+$ mkdir catcollector
+$ cd catcollector
 ```
+
+#### Create the Environment
 
 Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
 multiple versions of Python on the same system so we can have different versions
@@ -98,7 +100,7 @@ of our dependencies. The `pip freeze` command saves the dependencies in our `vir
 that file.
 
 ```bash
-$ pip3 install Django
+$ pip3 install django
 $ pip3 install psycopg2
 $ pip3 freeze > requirements.txt
 ```
@@ -112,34 +114,16 @@ PostgreSQL within Django.
 If you are downloading and running a Python project, you can usually install
 its dependencies with `pip3 install -r requirements.txt`.
 
+#### Create the Project
+
 Let's go ahead and create our project. `django-admin` gives us commands to
 generate some of our project for us.
 
 ```bash
-$ django-admin startproject tunr_django . # Do not forget the 'dot' at the end.
+$ django-admin startproject catcollector_project . # Do not forget the 'dot' at the end.
 ```
 
 Take a minute to look at the generated files.
-
-Let's go ahead and also create our app.
-
-```bash
-$ django-admin startapp tunr
-```
-Again, take a minute to look at the newly generated files.
-
-By default, Django uses MySQL for its database.  Let's use PostgreSQL instead
-since it's better suited for production applications.
-
-#### Create the database
-
-Databases are not automatically created by Django.
-
-Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
-
-```
-$ createdb catcollector
-```
 
 #### Create the App
 
@@ -186,6 +170,16 @@ Ignore the red message about unapplied migrations, we'll take care of those in a
 Browse to `localhost:8000` and make sure you see the rocket on the page:
 
 <img src="https://i.imgur.com/RozMgJ0.png">
+
+#### Create the database
+
+Databases are not automatically created by Django.
+
+Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
+
+```
+$ createdb catcollector
+```
 
 #### Connecting to the Database
 
