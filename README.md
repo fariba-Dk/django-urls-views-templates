@@ -75,39 +75,61 @@ Once again, let's review this diagram that shows how a request flows through a D
 
 ## We Do: Start the **CatCollector** Project
 
-Let's start by installing Django to our machine and running the `startproject` command:
+Let's start by making a directory for our project:
 
+```bash
+$ mkdir django-starter
+$ cd django-starter
 ```
-$ pip3 install Django
-$ django-admin startproject catcollector
-```
 
-The above command generates and configures a Django project in a folder named **catcollector**.
+Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
+multiple versions of Python on the same system so we can have different versions
+of both Python and the packages we are using on our computers.
 
-Change into the **catcollector** folder just created and open the folder in your text editor.
-
-Let's also build a virtual environment. Virtual environments allow us to install `pip` packages in the project we're working on instead of globally on our machine. This is an important step in order to keep your installation organized and easy to deploy.
-
-```
+```bash
 $ pip3 install virtualenv
 $ virtualenv .env -p python3
 $ source .env/bin/activate
 ```
 
-Let's also install some dependencies and save them. Django doesn't utilize a `Gemfile` or a `package.json`. Instead, we just use a text file that lists all of our dependencies; in our case, that file is called `requirements.txt`. The `pip freeze` command saves the dependencies in our virtualenv to that file.
+Let's also install some dependencies and save them. Django doesn't utilize a
+`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
+of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
+that file.
 
-```
+```bash
+$ pip3 install Django
 $ pip3 install psycopg2
 $ pip3 freeze > requirements.txt
 ```
-
 > You may need to also install `pip3 install psycopg2-binary`
 
-> If you run into an error install `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
+> If you run into an error install psycopg `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
-Django is, of course, the framework we are using. `psycopg2` allows us to use PostgreSQL within Django.
+Django is, of course, the framework we are using. `psycopg2` allows us to use
+PostgreSQL within Django.
 
-If you are downloading and running a Python project, you can usually install its dependencies with `pip3 install -r requirements.txt`.
+If you are downloading and running a Python project, you can usually install
+its dependencies with `pip3 install -r requirements.txt`.
+
+Let's go ahead and create our project. `django-admin` gives us commands to
+generate some of our project for us.
+
+```bash
+$ django-admin startproject tunr_django . # Do not forget the 'dot' at the end.
+```
+
+Take a minute to look at the generated files.
+
+Let's go ahead and also create our app.
+
+```bash
+$ django-admin startapp tunr
+```
+Again, take a minute to look at the newly generated files.
+
+By default, Django uses MySQL for its database.  Let's use PostgreSQL instead
+since it's better suited for production applications.
 
 #### Create the database
 
