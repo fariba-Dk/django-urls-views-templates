@@ -585,8 +585,6 @@ To see how data is rendered dynamically using Django templating, we're going to 
 
 _As a User, when I click the **View All My Cats** link, I want to see a page listing all of my cats._
 
-Luckily the [process of how to add a feature to a web application](https://gist.github.com/jim-clark/9f9bd19d60d9ce2ec57be8242b6aee96) from the previous unit you had tattooed applies to all web frameworks!
-
 #### Step 1 - Identify the "Proper" Route
 
 First, let's be clear on the fact that Django's URL-based routing is **not** RESTful routing - **why is this the case?**
