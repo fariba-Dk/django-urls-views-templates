@@ -75,49 +75,55 @@ Once again, let's review this diagram that shows how a request flows through a D
 
 ## We Do: Start the **CatCollector** Project
 
-Let's start by installing Django to our machine and running the `startproject` command:
+Let's start by making a directory for our project:
 
+```bash
+$ mkdir catcollector
+$ cd catcollector
 ```
-$ pip3 install Django
-$ django-admin startproject catcollector
-```
 
-The above command generates and configures a Django project in a folder named **catcollector**.
+#### Create the Environment
 
-Change into the **catcollector** folder just created and open the folder in your text editor.
+Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
+multiple versions of Python on the same system so we can have different versions
+of both Python and the packages we are using on our computers.
 
-Let's also build a virtual environment. Virtual environments allow us to install `pip` packages in the project we're working on instead of globally on our machine. This is an important step in order to keep your installation organized and easy to deploy.
-
-```
+```bash
 $ pip3 install virtualenv
 $ virtualenv .env -p python3
 $ source .env/bin/activate
 ```
 
-Let's also install some dependencies and save them. Django doesn't utilize a `Gemfile` or a `package.json`. Instead, we just use a text file that lists all of our dependencies; in our case, that file is called `requirements.txt`. The `pip freeze` command saves the dependencies in our virtualenv to that file.
+Let's also install some dependencies and save them. Django doesn't utilize a
+`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
+of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
+that file.
 
-```
+```bash
+$ pip3 install django
 $ pip3 install psycopg2
 $ pip3 freeze > requirements.txt
 ```
-
 > You may need to also install `pip3 install psycopg2-binary`
 
-> If you run into an error install `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
+> If you run into an error install psycopg `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
-Django is, of course, the framework we are using. `psycopg2` allows us to use PostgreSQL within Django.
+Django is, of course, the framework we are using. `psycopg2` allows us to use
+PostgreSQL within Django.
 
-If you are downloading and running a Python project, you can usually install its dependencies with `pip3 install -r requirements.txt`.
+If you are downloading and running a Python project, you can usually install
+its dependencies with `pip3 install -r requirements.txt`.
 
-#### Create the database
+#### Create the Project
 
-Databases are not automatically created by Django.
+Let's go ahead and create our project. `django-admin` gives us commands to
+generate some of our project for us.
 
-Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
-
+```bash
+$ django-admin startproject catcollector_project . # Do not forget the 'dot' at the end.
 ```
-$ createdb catcollector
-```
+
+Take a minute to look at the generated files.
 
 #### Create the App
 
@@ -164,6 +170,16 @@ Ignore the red message about unapplied migrations, we'll take care of those in a
 Browse to `localhost:8000` and make sure you see the rocket on the page:
 
 <img src="https://i.imgur.com/RozMgJ0.png">
+
+#### Create the database
+
+Databases are not automatically created by Django.
+
+Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
+
+```
+$ createdb catcollector
+```
 
 #### Connecting to the Database
 
@@ -568,8 +584,6 @@ That's better!
 To see how data is rendered dynamically using Django templating, we're going to implement the following user story:
 
 _As a User, when I click the **View All My Cats** link, I want to see a page listing all of my cats._
-
-Luckily the [process of how to add a feature to a web application](https://gist.github.com/jim-clark/9f9bd19d60d9ce2ec57be8242b6aee96) from the previous unit you had tattooed applies to all web frameworks!
 
 #### Step 1 - Identify the "Proper" Route
 
