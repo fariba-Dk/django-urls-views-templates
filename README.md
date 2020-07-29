@@ -89,7 +89,7 @@ multiple versions of Python on the same system so we can have different versions
 of both Python and the packages we are using on our computers.
 
 ```bash
-$ pip3 install virtualenv
+$ pip3 install virtualenv # This is a one-time install (do not do this step for each project)
 $ virtualenv .env -p python3
 $ source .env/bin/activate
 ```
