@@ -88,9 +88,10 @@ Let's also build a virtual environment. Virtual environments allow us to have vi
 multiple versions of Python on the same system so we can have different versions
 of both Python and the packages we are using on our computers.
 
+We will use the `venv` module, bundled with Python v3.3 and higher, to create our virutal environment:
+
 ```bash
-$ pip3 install virtualenv
-$ virtualenv .env -p python3
+$ python3 -m venv .env
 $ source .env/bin/activate
 ```
 
