@@ -95,6 +95,11 @@ $ python3 -m venv .env
 $ source .env/bin/activate
 ```
 
+Before we install anything let's make sure we have the latest version of Python3.
+```bash
+$ brew install python@3.9
+```
+
 Let's also install some dependencies and save them. Django doesn't utilize a
 `Gemfile` or a `package.json`. Instead, we just use a text file that lists all
 of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
