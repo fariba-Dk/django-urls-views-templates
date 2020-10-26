@@ -100,11 +100,7 @@ Before we install anything let's make sure we have the latest version of Python3
 $ brew install python@3.9
 ```
 
-Let's also install some dependencies and save them. Django doesn't utilize a
-`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
-of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
-that file.
-
+Let's also install some dependencies and save them. 
 ```bash
 $ pip3 install django
 $ pip3 install psycopg2-binary
@@ -112,7 +108,10 @@ $ pip3 install psycopg2
 ```
 If you run into an error installing psycopg2, install using this command `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
-Create a requirements.txt file with all required modules.
+Django doesn't utilize a
+`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
+of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
+that file. Let's create a requirements.txt file with all of our required modules.
 ```bash
 $ pip3 freeze > requirements.txt
 ```
