@@ -84,6 +84,11 @@ $ cd catcollector
 
 #### Create the Environment
 
+Before we get started on setup let's make sure we have the proper version of Python3.
+```bash
+$ brew install python@3.9
+```
+
 Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
 multiple versions of Python on the same system so we can have different versions
 of both Python and the packages we are using on our computers.
@@ -93,11 +98,6 @@ We will use the `venv` module, bundled with Python v3.3 and higher, to create ou
 ```bash
 $ python3 -m venv .env
 $ source .env/bin/activate
-```
-
-Before we install anything let's make sure we have the latest version of Python3.
-```bash
-$ brew install python@3.9
 ```
 
 Let's also install some dependencies and save them. 
