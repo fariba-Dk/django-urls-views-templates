@@ -116,6 +116,7 @@ Django is, of course, the framework we are using. `psycopg2` allows us to use
 PostgreSQL within Django.
 
 **Cloning a Python / Django project from Github**
+
 If you are downloading and running a Python project, you can
 - Create a new virtual environment in your project with
 ```bash
