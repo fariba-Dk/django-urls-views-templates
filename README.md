@@ -102,12 +102,14 @@ that file.
 
 ```bash
 $ pip3 install django
+$ pip3 install psycopg2-binary
 $ pip3 install psycopg2
+```
+If you run into an error installing psycopg2, install using this command `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
+
+```bash
 $ pip3 freeze > requirements.txt
 ```
-> You may need to also install `pip3 install psycopg2-binary`
-
-> If you run into an error install psycopg `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
 Django is, of course, the framework we are using. `psycopg2` allows us to use
 PostgreSQL within Django.
