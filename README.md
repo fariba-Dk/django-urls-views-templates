@@ -115,8 +115,17 @@ $ pip3 freeze > requirements.txt
 Django is, of course, the framework we are using. `psycopg2` allows us to use
 PostgreSQL within Django.
 
-If you are downloading and running a Python project, you can usually install
-its dependencies with `pip3 install -r requirements.txt`.
+**Cloning a Python / Django project from Github**
+If you are downloading and running a Python project, you can
+- Create a new virtual environment in your project with
+```bash
+$ python3 -m venv .env
+$ source .env/bin/activate
+```
+- Install its dependencies with
+```
+pip3 install -r requirements.txt
+```
 
 #### Create the Project
 
