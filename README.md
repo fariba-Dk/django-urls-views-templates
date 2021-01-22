@@ -84,6 +84,11 @@ $ cd catcollector
 
 #### Create the Environment
 
+Before we get started on setup let's make sure we have the proper version of Python3.
+```bash
+$ brew install python@3.9
+```
+
 Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
 multiple versions of Python on the same system so we can have different versions
 of both Python and the packages we are using on our computers.
@@ -95,25 +100,37 @@ $ python3 -m venv .env
 $ source .env/bin/activate
 ```
 
-Let's also install some dependencies and save them. Django doesn't utilize a
-`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
-of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
-that file.
-
+Let's also install some dependencies and save them. 
 ```bash
 $ pip3 install django
+$ pip3 install psycopg2-binary
 $ pip3 install psycopg2
+```
+If you run into an error installing psycopg2, install using this command `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
+
+Django doesn't utilize a
+`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
+of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
+that file. Let's create a requirements.txt file with all of our required modules.
+```bash
 $ pip3 freeze > requirements.txt
 ```
-> You may need to also install `pip3 install psycopg2-binary`
-
-> If you run into an error install psycopg `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
 Django is, of course, the framework we are using. `psycopg2` allows us to use
 PostgreSQL within Django.
 
-If you are downloading and running a Python project, you can usually install
-its dependencies with `pip3 install -r requirements.txt`.
+**Cloning a Python / Django project from Github**
+
+If you are downloading and running a Python project, you can
+- Create a new virtual environment in your project with
+```bash
+$ python3 -m venv .env
+$ source .env/bin/activate
+```
+- Install its dependencies with
+```
+pip3 install -r requirements.txt
+```
 
 #### Create the Project
 
