@@ -91,15 +91,16 @@ To check your Python 3 version
 $ python3 --version
 ```
 
-If you get back a version other than 3.9 go ahead and install it and link it as your primary version.
+If you get back version 3.9 or 3.9.1 or 3.9.0 or 3.9.<something> you are good to go. You have the version of python we want.
+
+If you get back a version other than 3.9 or 3.9.<something> go ahead and install it and link it as your primary version.
 ```bash
 $ brew install python@3.9
 $ brew link --overwrite python@3.9
 ```
 
-Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
-multiple versions of Python on the same system so we can have different versions
-of both Python and the packages we are using on our computers.
+Let's create a virtual environment. A virtual environment is an isolated ecosystem where we can install specific version of our packages
+and version of python without affecting the versions of those packages we might have installed globally on our computer.
 
 We will use the `venv` module, bundled with Python v3.3 and higher, to create our virutal environment:
 
