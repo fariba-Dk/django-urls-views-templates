@@ -84,9 +84,17 @@ $ cd catcollector
 
 #### Create the Environment
 
-Before we get started on setup let's make sure we have the proper version of Python3.
+Before we get started on setup let's make sure we have the proper version of Python 3.
+
+To check your Python 3 version
+```bash
+$ python3 --version
+```
+
+If you get back a version other than 3.9 go ahead and install it and link it as your primary version.
 ```bash
 $ brew install python@3.9
+$ brew link --overwrite python@3.9
 ```
 
 Let's also build a virtual environment. Virtual environments allow us to have virtual installation of python and
@@ -95,18 +103,28 @@ of both Python and the packages we are using on our computers.
 
 We will use the `venv` module, bundled with Python v3.3 and higher, to create our virutal environment:
 
+Create our virtual environment
 ```bash
 $ python3 -m venv .env
+```
+
+Start up our virtual environment
+```bash
 $ source .env/bin/activate
 ```
 
-Let's also install some dependencies and save them. 
+We won't need to run this now, but for reference to deactivate our virtual environment we can run
+```bash
+deactivate
+```
+
+Let's also install some dependencies and save them.
+The django package allows us to create and set up our django project.
+The psycopg2 package is a driver that will allow us to connect our django project to our PostgreSQL database. 
 ```bash
 $ pip3 install django
-$ pip3 install psycopg2-binary
-$ pip3 install psycopg2
+$ env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2
 ```
-If you run into an error installing psycopg2, install using this command `env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2`
 
 Django doesn't utilize a
 `Gemfile` or a `package.json`. Instead, we just use a text file that lists all
@@ -115,9 +133,6 @@ that file. Let's create a requirements.txt file with all of our required modules
 ```bash
 $ pip3 freeze > requirements.txt
 ```
-
-Django is, of course, the framework we are using. `psycopg2` allows us to use
-PostgreSQL within Django.
 
 **Cloning a Python / Django project from Github**
 
