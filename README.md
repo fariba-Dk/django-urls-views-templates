@@ -91,9 +91,9 @@ To check your Python 3 version
 $ python3 --version
 ```
 
-If you get back version 3.9 or 3.9.1 or 3.9.0 or 3.9.<something> you are good to go. You have the version of python we want.
+If you get back version 3.9 or 3.9.1 or 3.9.0 or 3.9.[some number] you are good to go. You have the version of python we want.
 
-If you get back a version other than 3.9 or 3.9.<something> go ahead and install it and link it as your primary version.
+If you get back a version other than 3.9 or 3.9.[some number] go ahead and install it and link it as your primary version with
 ```bash
 $ brew install python@3.9
 $ brew link --overwrite python@3.9
