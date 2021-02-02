@@ -124,7 +124,7 @@ The django package allows us to create and set up our django project.
 The psycopg2 package is a driver that will allow us to connect our django project to our PostgreSQL database. 
 ```bash
 $ pip3 install django
-$ env LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib" pip3 install psycopg2
+$ pip3 install psycopg2-binary
 ```
 
 Django doesn't utilize a
@@ -135,7 +135,7 @@ that file. Let's create a requirements.txt file with all of our required modules
 $ pip3 freeze > requirements.txt
 ```
 
-**Cloning a Python / Django project from Github**
+#### When Cloning a Python / Django project from Github
 
 If you are downloading and running a Python project, you can
 - Create a new virtual environment in your project with
