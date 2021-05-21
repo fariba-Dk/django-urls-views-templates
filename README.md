@@ -82,11 +82,13 @@ $ mkdir catcollector
 $ cd catcollector
 ```
 
-#### Create the Environment
+### Create the Environment
+
+Run these instructions when creating a brand new Django app from scratch. Make sure to read carefully and follow these steps in order.
 
 Before we get started on setup let's make sure we have the proper version of Python 3.
 
-To check your Python 3 version
+1. To check your Python 3 version
 ```bash
 $ python3 --version
 ```
@@ -99,7 +101,7 @@ $ brew install python@3.9
 $ brew link --overwrite python@3.9
 ```
 
-Let's create a virtual environment. A virtual environment is an isolated ecosystem where we can install specific version of our packages
+2. Let's create a virtual environment. A virtual environment is an isolated ecosystem where we can install specific version of our packages
 and version of python without affecting the versions of those packages we might have installed globally on our computer.
 
 We will use the `venv` module, bundled with Python v3.3 and higher, to create our virutal environment:
@@ -109,17 +111,17 @@ Create our virtual environment
 $ python3 -m venv .env
 ```
 
-Start up our virtual environment
+3. Start up our virtual environment
 ```bash
 $ source .env/bin/activate
 ```
 
-We won't need to run this now, but for reference to deactivate our virtual environment we can run
+__We won't need to run this now__, but for reference to deactivate our virtual environment we can run
 ```bash
 deactivate
 ```
 
-Let's also install some dependencies and save them.
+4. Let's also install a couple of dependencies and save them.
 The django package allows us to create and set up our django project.
 The psycopg2 package is a driver that will allow us to connect our django project to our PostgreSQL database. 
 ```bash
@@ -127,23 +129,21 @@ $ pip3 install django
 $ pip3 install psycopg2-binary
 ```
 
-Django doesn't utilize a
-`Gemfile` or a `package.json`. Instead, we just use a text file that lists all
-of our dependencies. The `pip freeze` command saves the dependencies in our `virtualenv` to
-that file. Let's create a requirements.txt file with all of our required modules.
+5. We'll create a `requirements.txt` file that keeps track of all of our depencancies, just like our `package.json` when we were working with Express. The `pip freeze` command saves the dependencies in our `virtualenv` to that file.
 ```bash
 $ pip3 freeze > requirements.txt
 ```
 
-#### When Cloning a Python / Django project from Github
+### Do this When After Cloning down a Python / Django project from Github
 
-If you are downloading and running a Python project, you can
-- Create a new virtual environment in your project with
+If you are downloading and running a Django project, you can
+
+1. Create a new virtual environment in your project with
 ```bash
 $ python3 -m venv .env
 $ source .env/bin/activate
 ```
-- Install its dependencies with
+2. Install its dependencies with
 ```
 pip3 install -r requirements.txt
 ```
