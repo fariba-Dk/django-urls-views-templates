@@ -148,7 +148,7 @@ $ source .env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-#### Create the Project
+### Create the Project
 
 Let's go ahead and create our project. `django-admin` gives us commands to
 generate some of our project for us.
