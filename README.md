@@ -82,7 +82,7 @@ $ mkdir catcollector
 $ cd catcollector
 ```
 
-### Create the Environment
+### Create the Environment - Do this When Creating a new Django Project from Scratch
 
 Run these instructions when creating a brand new Django app from scratch. Make sure to read carefully and follow these steps in order.
 
@@ -134,7 +134,7 @@ $ pip3 install psycopg2-binary
 $ pip3 freeze > requirements.txt
 ```
 
-### Do this When After Cloning down a Python / Django project from Github
+### Do this After Cloning down an existing Python / Django project from Github
 
 If you are downloading and running a Django project, you can
 
